@@ -4,6 +4,10 @@
   <h1 id="githubscount">0 githubs</h1>
   <h2 id="cps">0 clicks per second</h3>
   <button onclick="clickGithub()"><img src="../imgs/github-mark.png"></button>
+  <p id="upgradecost">upgrade cost: 100 githubs</p>
+  <br><button onclick="upgrade(1)">upgrade</button>
+  <p id="cpsupgradecost">CPS upgrade cost: 200 githubs</p>
+  <br><button onclick="upgrade(2)">upgrade</button>
 </center>
 <script>
 githubs = 0;
@@ -19,6 +23,7 @@ function upgrade(type) {
         githubs = githubs - upgrade * 100;
         upgrade = upgrade +  1;
         document.getElementById("githubscount").innerHTML = githubs + " githubs";
+        document.getElementById("upgradecost").innerHTML = "upgrade cost: " + upgrade * 100 + " githubs";
   }
   }else{
       if(githubs >= cps * 200) {
@@ -26,6 +31,7 @@ function upgrade(type) {
         cps = cps +  2;
         document.getElementById("githubscount").innerHTML = githubs + " githubs";
         document.getElementById("cps").innerHTML = cps + " clicks per second";
+        document.getElementById("cpsupgradecost").innerHTML = "upgrade cost: " + upgrade * 200 + " githubs";
   }
 }
 }
